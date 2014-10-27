@@ -1,4 +1,4 @@
-pywatson
+pywatson [![Travis CI](http://img.shields.io/travis/sherlocke/pywatson.svg?style=flat)](https://travis-ci.org/sherlocke/pywatson)
 ========
 
 A Python adapter for IBM Watson's question and answer API
