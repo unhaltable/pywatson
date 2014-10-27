@@ -1,3 +1,5 @@
-class Watson(object):
+class Watson:
     """The Watson API adapter class"""
-    pass
+
+    def __init__(self, url, username, password):
+        pass
