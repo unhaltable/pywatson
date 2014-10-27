@@ -1,5 +1,8 @@
 language: python
 python:
-  - "2.7"
-  - "3.4"
+  - '2.7'
+  - '3.4'
 script: py.test
+notifications:
+  slack:
+    secure: JyqGMOJuxNJZ3MWLrlSAyLZr5GelfiLuw+CTJRASSz45X7i+G7zYylYae0diP1CnImQBy8lR/jRGSkJv9cnnCpMZR0EG31J+VRHhR5oyz1KdDjN1OGlVZo8srneYY05yr8yZeqEl556aqvoht5IPzhFRB5bAzw33qji2famkX+M=
