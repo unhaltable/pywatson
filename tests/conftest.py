@@ -3,6 +3,7 @@ import os
 import pytest
 from pywatson.watson import Watson
 from .data.questions import QUESTIONS
+from .data.answers import ANSWERS
 
 
 @pytest.fixture
@@ -29,3 +30,8 @@ def watson(config):
 @pytest.fixture
 def questions():
     return QUESTIONS
+
+
+@pytest.fixture
+def answers():
+    return ANSWERS
