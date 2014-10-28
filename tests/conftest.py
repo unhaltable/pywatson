@@ -1,3 +1,4 @@
+import json
 import os
 import pytest
 from pywatson.watson import Watson
@@ -22,3 +23,18 @@ def config():
 @pytest.fixture
 def watson(config):
     return Watson(url=config['url'], username=config['username'], password=config['password'])
+
+
+@pytest.fixture
+def questions():
+    qs = []
+
+    for root, dirs, files in os.walk('tests/json/questions'):
+        for filename in files:
+            filepath = os.path.join(root, filename)
+            try:
+                qs.append(json.load(open(filepath)))
+            except ValueError:
+                raise ValueError('Expected {} to contain valid JSON'.format(filepath))
+
+    return qs
