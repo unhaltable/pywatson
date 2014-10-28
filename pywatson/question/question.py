@@ -33,7 +33,7 @@ class Question:
         :param evidence_request:
         :type evidence_request: EvidenceRequest
         :param filters:
-        :type filters: tuple of Filter
+        :type filters: Iterable of Filter
         :param formatted_answer:
         :type formatted_answer: bool
         :param items:
@@ -43,7 +43,7 @@ class Question:
         :param passthru:
         :type passthru: str
         :param synonym_list:
-        :type synonym_list: tuple of str
+        :type synonym_list: Iterable of str
         :return: Question
         """
         self.question_text = question_text
@@ -58,5 +58,5 @@ class Question:
         self.passthru = passthru
         self.synonym_list = synonym_list
 
-    def to_dict(self):
-        pass
+    def __eq__(self, other):
+        return False
