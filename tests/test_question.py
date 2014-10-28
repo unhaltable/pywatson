@@ -27,11 +27,11 @@ class TestQuestion(object):
                             items=q['items'],
                             lat=q['lat'],
                             passthru=q['passthru'],
-                            synonym_list=q['synonymList'])
+                            synonym_list=q['synonyms'])
 
         assert question.question_text == q['questionText']
         assert question.answer_assertion == q['answerAssertion']
         assert question.category == q['category']
         assert question.context == q['context']
-        assert question.evidence_request == er
+        assert question.evidence_request == evidence_request
         assert question.filters == filters
