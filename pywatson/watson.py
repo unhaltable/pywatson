@@ -3,7 +3,7 @@ from pywatson.question.question import Question
 import requests
 
 
-class Watson:
+class Watson(object):
     """The Watson API adapter class"""
 
     def __init__(self, url, username, password):
@@ -22,8 +22,8 @@ class Watson:
         :return: Answer
         """
         if question is not None:
-            q = question.to_dict()
+            q = question.__dict__
         else:
-            q = Question(question_text).to_dict()
+            q = Question(question_text).__dict__
         r = requests.post(self.url + '/question', json=q)
         return Answer(r.json())
