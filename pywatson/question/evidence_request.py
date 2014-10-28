@@ -6,4 +6,19 @@ class EvidenceRequest(object):
         self.profile = profile
 
     def __eq__(self, other):
-        return False
+        """Return True iff self is equivalent to other
+
+        :param other: an EvidenceRequest
+        :return: True or False
+        """
+        if self is other:
+            return True
+
+        if not isinstance(other, EvidenceRequest):
+            return False
+        if self.items != other.items:
+            return False
+        if self.profile != other.profile:
+            return False
+
+        return True
