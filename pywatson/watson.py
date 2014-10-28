@@ -1,3 +1,8 @@
+from pywatson.answer.answer import Answer
+from pywatson.question.question import Question
+import requests
+
+
 class Watson:
     """The Watson API adapter class"""
 
@@ -16,4 +21,9 @@ class Watson:
         :type question: Question
         :return: Answer
         """
-        pass
+        if question is not None:
+            q = question.to_dict()
+        else:
+            q = Question(question_text).to_dict()
+        r = requests.post(self.url + '/question', json=q)
+        return Answer(r.json())
