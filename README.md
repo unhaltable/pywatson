@@ -28,5 +28,5 @@ watson = Watson(url='https://watson-wdc01.ihost.com/instance/507/deepqa/v1', use
 
 [travis-badge]:    http://img.shields.io/travis/sherlocke/pywatson.svg?style=flat
 [travis]:          https://travis-ci.org/sherlocke/pywatson
-[landscape-badge]: https://landscape.io/github/sherlocke/pywatson/master/landscape.png
+[landscape-badge]: https://landscape.io/github/sherlocke/pywatson/master/landscape.png?style=flat
 [landscape]:       https://landscape.io/github/sherlocke/pywatson/master
