@@ -1,0 +1,2 @@
+class Synonym(object):
+    pass
