@@ -1,5 +1,6 @@
 from pywatson.answer.watson_answer import WatsonAnswer
 from pywatson.question.watson_question import WatsonQuestion
+import json
 import requests
 
 
@@ -22,8 +23,15 @@ class Watson(object):
         :return: Answer
         """
         if question is not None:
-            q = question.__dict__
+            q = question.to_dict()
         else:
-            q = WatsonQuestion(question_text).__dict__
-        r = requests.post(self.url + '/question', json=q)
-        return WatsonAnswer(r.json())
+            q = WatsonQuestion(question_text).to_dict()
+        r = requests.post(self.url + '/question', json={'question': q}, headers={
+            'Accept': 'application/json',
+            'X-SyncTimeout': 30
+        }, auth=(self.username, self.password))
+        try:
+            response_json = r.json()
+        except ValueError:
+            raise Exception('Failed to parse response JSON')
+        return WatsonAnswer(response_json)
