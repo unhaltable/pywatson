@@ -1,4 +1,5 @@
 enum34==1.0.3
+inflection==0.2.1
 py==1.4.26
 pytest==2.6.4
 requests==2.4.3
