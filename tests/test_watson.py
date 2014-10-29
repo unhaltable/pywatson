@@ -12,3 +12,4 @@ class TestWatson:
     def test_ask_question_basic(self, watson):
         answer = watson.ask_question('What is the Labour Code?')
         assert type(answer) is WatsonAnswer
+        assert len(answer.answers) > 0
