@@ -31,6 +31,7 @@ import os
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
@@ -58,7 +59,7 @@ copyright = '2014, Spencer Elliott'
 # built documents.
 #
 # The short X.Y version.
-version = '0.0.1'
+version = '0.0'
 # The full version, including alpha/beta/rc tags.
 release = '0.0.1'
 
