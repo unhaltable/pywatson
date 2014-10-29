@@ -1,4 +1,4 @@
-class Answer(object):
+class WatsonAnswer(object):
     """An answer received from Watson"""
 
     def __init__(self, answer_mapping):

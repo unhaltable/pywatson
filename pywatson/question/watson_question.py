@@ -1,7 +1,7 @@
 from pywatson.question.evidence_request import EvidenceRequest
 
 
-class Question(object):
+class WatsonQuestion(object):
     """A question to ask Watson"""
 
     def __init__(self,

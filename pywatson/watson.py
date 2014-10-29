@@ -1,5 +1,5 @@
-from pywatson.answer.answer import Answer
-from pywatson.question.question import Question
+from pywatson.answer.watson_answer import WatsonAnswer
+from pywatson.question.watson_question import WatsonQuestion
 import requests
 
 
@@ -18,12 +18,12 @@ class Watson(object):
         :type question_text: str
         :param question: if question_text is not provided, a Question object
                          representing the question to ask Watson
-        :type question: Question
+        :type question: WatsonQuestion
         :return: Answer
         """
         if question is not None:
             q = question.__dict__
         else:
-            q = Question(question_text).__dict__
+            q = WatsonQuestion(question_text).__dict__
         r = requests.post(self.url + '/question', json=q)
-        return Answer(r.json())
+        return WatsonAnswer(r.json())
