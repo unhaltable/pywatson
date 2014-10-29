@@ -1,7 +1,9 @@
+import inflection
 from pywatson.question.evidence_request import EvidenceRequest
+from pywatson.util.dictable import Dictable
 
 
-class WatsonQuestion(object):
+class WatsonQuestion(Dictable):
     """A question to ask Watson"""
 
     def __init__(self,
