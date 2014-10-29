@@ -5,4 +5,4 @@ python:
 script: py.test
 notifications:
   slack:
-    secure: ABYHsNZGOJRpgDPAKGm3geztFMPgn3vw+n44lKk1H3MkbKrC2GpY71zEr2haFbT9azFsUPH7H+zaaS0GaZCSOFiafD9WMscroh5tbG4vUJIcNrRImv3bCgGDBnms/xzdBmty0avy6v7LL6PZkG3MBrbT/ZjB+JznGGdqExrETJE=
+    secure: a7b+T/TFWf5mObxdH/jhxoz91e5cxJyYFNNX9A9i4NRLANYBodOS/rqoUegehs0jX0QXPqdsfJGGtQfiwcFW6gGGfkZ9T1muJlGAHyWkSBKUe3DE2j4eiTdzU4a1nvZleUl4XPlLZLUYWi4oAkcp7cjgxWXXh7+1NBqjSrapuPQ=
