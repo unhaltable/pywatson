@@ -8,4 +8,4 @@ class WatsonAnswer(object):
         :type answer_mapping: Mapping
         :return: Answer
         """
-        self.answer_mapping = answer_mapping
+        self.raw = answer_mapping
