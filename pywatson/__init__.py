@@ -1,1 +1,3 @@
-__author__ = 'elliottsj'
+"""
+pywatson module
+"""
