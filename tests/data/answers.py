@@ -89,7 +89,12 @@ ANSWERS = [
             ],
             'passthru': '',
             'items': 5,
-            'errorNotifications': [],
+            'errorNotifications': [
+                {
+                    'error': 'test error',
+                    'text': 'test error text'
+                }
+            ],
             'answers': [
                 {
                     'pipeline': 'Descriptive,TAO',
