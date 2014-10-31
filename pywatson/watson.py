@@ -1,6 +1,5 @@
 from pywatson.answer.watson_answer import WatsonAnswer
 from pywatson.question.watson_question import WatsonQuestion
-import json
 import requests
 
 

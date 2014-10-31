@@ -109,7 +109,6 @@ pygments_style = 'sphinx'
 #html_theme = 'default'
 
 # on_rtd is whether we are on readthedocs.org
-import os
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 if not on_rtd:  # only import and set the theme if we're building docs locally
