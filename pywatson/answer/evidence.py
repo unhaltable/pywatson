@@ -20,7 +20,7 @@ class Evidence(object):
         :param evidence_mapping: a mapping (e.g. dict) of values provided by Watson
         :return: a new Evidence
         """
-        return cls(metadata_map=MetadataMap(evidence_mapping['metadataMap']),
+        return cls(metadata_map=MetadataMap.from_mapping(evidence_mapping['metadataMap']),
                    copyright=evidence_mapping['copyright'],
                    id=evidence_mapping['id'],
                    terms_of_use=evidence_mapping['termsOfUse'],
@@ -31,5 +31,33 @@ class Evidence(object):
 
 
 class MetadataMap(object):
+    """Additional metadata about an Evidence passage
+
+    """
+
     def __init__(self, originalfile, deepqaid, title, corpus_name, docno, file_name):
-        pass
+        """Initialize this MetadataMap with the given attributes.
+
+        :param originalfile:
+        :param deepqaid:
+        :param title:
+        :param corpus_name:
+        :param docno:
+        :param file_name:
+        :return:
+        """
+        self.originalfile = originalfile
+        self.deepqaid = deepqaid
+        self.title = title
+        self.corpus_name = corpus_name
+        self.docno = docno
+        self.file_name = file_name
+
+    @classmethod
+    def from_mapping(cls, metadata_mapping):
+        return cls(originalfile=metadata_mapping['originalfile'],
+                   deepqaid=metadata_mapping['deepqaid'],
+                   title=metadata_mapping['title'],
+                   corpus_name=metadata_mapping['corpusName'],
+                   docno=metadata_mapping['DOCNO'],
+                   file_name=metadata_mapping['fileName'])
