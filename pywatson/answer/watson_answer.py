@@ -57,7 +57,7 @@ class WatsonAnswer(object):
         if 'errorNotifications' in q:
             self.error_notifications = list(ErrorNotification(e) for e in q['errorNotifications'])
         if 'evidencelist' in q:
-            self.evidence_list = list(Evidence(e) for e in q['evidencelist'])
+            self.evidence_list = list(Evidence.from_mapping(e) for e in q['evidencelist'])
         if 'focuslist' in q:
             self.focus_list = list(s['value'] for s in q['focuslist'])
         if 'latlist' in q:
@@ -71,4 +71,4 @@ class WatsonAnswer(object):
         if 'supplemental' in q:
             self.supplemental = q['supplemental']
         if 'synonymList' in q:
-            self.synonym_list = list(Synonym(s) for s in q['synonymList'])
+            self.synonym_list = list(Synonym.from_mapping(s) for s in q['synonymList'])
