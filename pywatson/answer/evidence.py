@@ -35,7 +35,15 @@ class MetadataMap(object):
 
     """
 
-    def __init__(self, originalfile, deepqaid, title, corpus_name, docno, file_name):
+    def __init__(self,
+                 originalfile,
+                 deepqaid,
+                 title,
+                 corpus_name,
+                 docno,
+                 corpus_plus_docno,
+                 file_name,
+                 metadata_mapping=None):
         """Initialize this MetadataMap with the given attributes.
 
         :param originalfile:
@@ -43,7 +51,9 @@ class MetadataMap(object):
         :param title:
         :param corpus_name:
         :param docno:
+        :param corpus_plus_docno:
         :param file_name:
+        :param metadata_mapping:
         :return:
         """
         self.originalfile = originalfile
@@ -51,13 +61,18 @@ class MetadataMap(object):
         self.title = title
         self.corpus_name = corpus_name
         self.docno = docno
+        self.corpus_plus_docno = corpus_plus_docno
         self.file_name = file_name
+
+        self.raw = metadata_mapping
 
     @classmethod
     def from_mapping(cls, metadata_mapping):
-        return cls(originalfile=metadata_mapping['originalfile'],
-                   deepqaid=metadata_mapping['deepqaid'],
-                   title=metadata_mapping['title'],
-                   corpus_name=metadata_mapping['corpusName'],
-                   docno=metadata_mapping['DOCNO'],
-                   file_name=metadata_mapping['fileName'])
+        return cls(originalfile=metadata_mapping.get('originalfile', None),
+                   deepqaid=metadata_mapping.get('deepqaid', None),
+                   title=metadata_mapping.get('title', None),
+                   corpus_name=metadata_mapping.get('corpusName', None),
+                   docno=metadata_mapping.get('DOCNO', None),
+                   corpus_plus_docno=metadata_mapping.get('CorpusPlusDocno', None),
+                   file_name=metadata_mapping.get('fileName', None),
+                   metadata_mapping=metadata_mapping)
