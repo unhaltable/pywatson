@@ -1,2 +1,4 @@
 doc-warnings: true
 strictness: high
+ignore-paths:
+  - docs/conf.py
