@@ -1,4 +1,3 @@
-from pywatson.question.evidence_request import EvidenceRequest
 from pywatson.util.dictable import Dictable
 
 
