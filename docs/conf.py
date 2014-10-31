@@ -51,7 +51,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'pywatson'
+project = 'PyWatson'
 copyright = '2014, Spencer Elliott'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -215,7 +215,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'pywatson.tex', 'pywatson Documentation',
+  ('index', 'pywatson.tex', 'PyWatson Documentation',
    'Spencer Elliott', 'manual'),
 ]
 
@@ -245,7 +245,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'pywatson', 'pywatson Documentation',
+    ('index', 'pywatson', 'PyWatson Documentation',
      ['Spencer Elliott'], 1)
 ]
 
@@ -259,8 +259,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'pywatson', 'pywatson Documentation',
-   'Spencer Elliott', 'pywatson', 'One line description of project.',
+  ('index', 'PyWatson', 'PyWatson Documentation',
+   'Spencer Elliott', 'PyWatson', 'One line description of project.',
    'Miscellaneous'),
 ]
 

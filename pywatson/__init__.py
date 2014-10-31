@@ -1,3 +1,3 @@
 """
-pywatson module
+PyWatson module
 """

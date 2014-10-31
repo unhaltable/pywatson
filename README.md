@@ -1,4 +1,4 @@
-pywatson [![Travis CI][travis-badge]][travis] [![Code Health][landscape-badge]][landscape] [![Documentation Status][readthedocs-badge]][readthedocs]
+PyWatson [![Travis CI][travis-badge]][travis] [![Code Health][landscape-badge]][landscape] [![Documentation Status][readthedocs-badge]][readthedocs]
 ========
 
 A Python adapter for IBM Watson's question and answer API
@@ -12,7 +12,7 @@ Install the package from PyPI:
 ## Usage
 
 ```python
-from pycanlii import Watson
+from pywatson import Watson
 
 # Create a Watson instance with your URL and credentials
 # pywatson will use the endpoint `url + '/question'`
