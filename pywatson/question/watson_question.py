@@ -51,12 +51,12 @@ class WatsonQuestion(Dictable):
         self.category = category
         self.context = context
         self.evidence_request = evidence_request
-        self.filters = filters
+        self.filters = tuple(filters)
         self.formatted_answer = formatted_answer
         self.items = items
         self.lat = lat
         self.passthru = passthru
-        self.synonym_list = synonym_list
+        self.synonym_list = tuple(synonym_list)
 
     def __eq__(self, other):
         return False
