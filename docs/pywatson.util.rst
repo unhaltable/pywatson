@@ -12,6 +12,14 @@ pywatson.util.dictable module
     :undoc-members:
     :show-inheritance:
 
+pywatson.util.map_initializable module
+--------------------------------------
+
+.. automodule:: pywatson.util.map_initializable
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 
 Module contents
 ---------------
