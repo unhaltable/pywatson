@@ -19,3 +19,23 @@ class TestMapInitializable(object):
         })
         assert f.bar == 123
         assert f.baz == 456
+
+        class Qux(MapInitializable):
+            attribute_name_mapping = {
+                'norf': 'norf',
+                'foo': ('foo', Foo)
+            }
+
+            def __init__(self, norf, foo):
+                self.norf = norf
+                self.foo = foo
+
+        q = Qux.from_mapping({
+            'norf': 321,
+            'foo': {
+                'Bar': 123,
+                'BAZ': 456
+            }
+        })
+        assert q.foo.norf == 321
+        assert q.foo.bar == 123
