@@ -2,8 +2,8 @@ import json
 import os
 import pytest
 from pywatson.watson import Watson
-from tests.data.answers import ANSWERS
-from tests.data.questions import QUESTIONS
+from data.answers import ANSWERS
+from data.questions import QUESTIONS
 
 
 @pytest.fixture

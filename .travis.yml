@@ -5,7 +5,7 @@ python:
 install:
   - pip install .
   - pip install -r requirements.txt
-script: py.test
+script: py.test tests
 notifications:
   slack:
     secure: a7b+T/TFWf5mObxdH/jhxoz91e5cxJyYFNNX9A9i4NRLANYBodOS/rqoUegehs0jX0QXPqdsfJGGtQfiwcFW6gGGfkZ9T1muJlGAHyWkSBKUe3DE2j4eiTdzU4a1nvZleUl4XPlLZLUYWi4oAkcp7cjgxWXXh7+1NBqjSrapuPQ=
