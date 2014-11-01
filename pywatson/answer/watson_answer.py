@@ -8,7 +8,6 @@ class WatsonAnswer(object):
     """An answer received from Watson.
 
     Attributes:
-      raw (dict): A dict of the raw response provided by Watson
       id (int): An integer that is assigned by the service
         to identify this question and its answers.
       answers (list of Answer, optional): The collection of answers
@@ -46,29 +45,40 @@ class WatsonAnswer(object):
         :type answer_mapping: Mapping
         :return: Answer
         """
+        #: ``dict``: A dict of the raw response provided by Watson
         self.raw = dict(answer_mapping)
 
         q = answer_mapping['question']
         self.id = q['id']
-        if 'answers' in q:
-            self.answers = list(Answer(a) for a in q['answers'])
-        if 'category' in q:
-            self.category = q['category']
-        if 'errorNotifications' in q:
-            self.error_notifications = list(ErrorNotification(e) for e in q['errorNotifications'])
-        if 'evidencelist' in q:
-            self.evidence_list = list(Evidence.from_mapping(e) for e in q['evidencelist'])
-        if 'focuslist' in q:
-            self.focus_list = list(s['value'] for s in q['focuslist'])
-        if 'latlist' in q:
-            self.lat_list = list(l['value'] for l in q['latlist'])
-        if 'pipelineid' in q:
-            self.pipelineid = q['pipelineid']
-        if 'qclasslist' in q:
-            self.qclasslist = list(qc['value'] for qc in q['qclasslist'])
-        if 'status' in q:
-            self.status = q['status']
-        if 'supplemental' in q:
-            self.supplemental = q['supplemental']
-        if 'synonymList' in q:
-            self.synonym_list = list(Synonym.from_mapping(s) for s in q['synonymList'])
+        self.category = q.get('category')
+        self.pipelineid = q.get('pipelineid')
+        self.status = q.get('status')
+        self.supplemental = q.get('supplemental')
+        self.answers = \
+            list(Answer(a)
+                 for a in q['answers']) \
+            if 'answers' in q else None
+        self.error_notifications = \
+            list(ErrorNotification.from_mapping(e)
+                 for e in q['errorNotifications']) \
+            if 'errorNotifications' in q else None
+        self.evidence_list = \
+            list(Evidence.from_mapping(e)
+                 for e in q['evidencelist']) \
+            if 'evidencelist' in q else None
+        self.focus_list = \
+            list(s['value']
+                 for s in q['focuslist']) \
+            if 'focuslist' in q else None
+        self.lat_list = \
+            list(l['value']
+                 for l in q['latlist']) \
+            if 'latlist' in q else None
+        self.qclasslist = \
+            list(qc['value']
+                 for qc in q['qclasslist']) \
+            if 'qclasslist' in q else None
+        self.synonym_list = \
+            list(Synonym.from_mapping(s)
+                 for s in q['synonymList']) \
+            if 'synonymList' in q else None
