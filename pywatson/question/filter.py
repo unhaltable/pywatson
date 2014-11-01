@@ -17,4 +17,21 @@ class Filter(object):
         self.values = values
 
     def __eq__(self, other):
-        return False
+        """Return True iff self is equivalent to other
+
+        :param other: A Filter
+        :return: True or False
+        """
+        if self is other:
+            return True
+
+        if not isinstance(other, Filter):
+            return False
+        if self.filter_type != other.filter_type:
+            return False
+        if self.field_name != other.field_name:
+            return False
+        if self.values != other.values:
+            return False
+
+        return True
