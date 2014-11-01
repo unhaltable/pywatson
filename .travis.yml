@@ -6,3 +6,11 @@ script: py.test
 notifications:
   slack:
     secure: a7b+T/TFWf5mObxdH/jhxoz91e5cxJyYFNNX9A9i4NRLANYBodOS/rqoUegehs0jX0QXPqdsfJGGtQfiwcFW6gGGfkZ9T1muJlGAHyWkSBKUe3DE2j4eiTdzU4a1nvZleUl4XPlLZLUYWi4oAkcp7cjgxWXXh7+1NBqjSrapuPQ=
+deploy:
+  provider: pypi
+  user: elliottsj
+  password:
+    secure: ioLrS05V49Jq0oCL/Vo7pPgIRvl4EHPvAYfoq5YV5w0s8LGIZrW2fT6qffnkwBqLxnMijDx7RSE2i8dPP4JDkxnO41Xyof7bn/AMPMWO49sTdZnQ6xz3FpIojiTdlv4cEgca/W+zyp3zmYJNZR/2ri3c95YZ+MqyjdsBRkSp0Ws=
+  distributions: "sdist bdist_wheel"
+  on:
+    tags: true
