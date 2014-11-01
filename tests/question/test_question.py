@@ -16,7 +16,7 @@ class TestQuestion(object):
         q = questions[1]
         er = q['evidenceRequest']
         evidence_request = EvidenceRequest(er['items'], er['profile'])
-        filters = [Filter(f['filterType'], f['filterName'], f['values']) for f in q['filters']]
+        filters = tuple(Filter(f['filterType'], f['filterName'], f['values']) for f in q['filters'])
         question = WatsonQuestion(
                 question_text=q['questionText'],
                 answer_assertion=q['answerAssertion'],

@@ -14,3 +14,4 @@ class TestWatson:
         assert type(answer) is WatsonAnswer
         assert answer.raw
         assert len(answer.answers) > 0
+        assert answer.synonym_list is not None
