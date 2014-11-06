@@ -13,7 +13,8 @@ deploy:
   provider: pypi
   user: elliottsj
   password:
-    secure: ioLrS05V49Jq0oCL/Vo7pPgIRvl4EHPvAYfoq5YV5w0s8LGIZrW2fT6qffnkwBqLxnMijDx7RSE2i8dPP4JDkxnO41Xyof7bn/AMPMWO49sTdZnQ6xz3FpIojiTdlv4cEgca/W+zyp3zmYJNZR/2ri3c95YZ+MqyjdsBRkSp0Ws=
+    secure: Ec8Xr72T/coj0t1EjKO5mX/6fyHKqj3WNVQ/SOx9mRIEyUeeWU0wwJxaL4IxpSkFIF2zWl4N0LwRLWW4QcXweSs/YSmM3H6uz0ppWprqgQSrxPuymRuBA/zGMrUyMPwM/GtsMXAE76OAzajiJvGjIpql57h1ZpTwbQcpo636pSk=
   distributions: "sdist bdist_wheel"
   on:
     tags: true
+    repo: sherlocke/pywatson
