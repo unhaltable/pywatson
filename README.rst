@@ -17,7 +17,7 @@ Usage
 
 .. code:: python
 
-    from pywatson import Watson
+    from pywatson.watson import Watson
 
     # Create a Watson instance with your URL and credentials
     # pywatson will use the endpoint `url + '/question'`
