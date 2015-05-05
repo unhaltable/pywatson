@@ -11,7 +11,7 @@ class Watson(object):
         self.username = username
         self.password = password
 
-    def ask_question(self, question_text, question=None):
+    def ask_question(self, question_text, question=None, dataset='healthcare', timeout=30):
         """Ask Watson a question via the Question and Answer API
 
         :param question_text: question to ask Watson
@@ -25,12 +25,12 @@ class Watson(object):
             q = question.to_dict()
         else:
             q = WatsonQuestion(question_text).to_dict()
-        r = requests.post(self.url + '/question', json={'question': q}, headers={
+        r = requests.post(self.url + '/question/' + dataset, json={'question': q}, headers={
             'Accept': 'application/json',
-            'X-SyncTimeout': 30
+            'X-SyncTimeout': timeout
         }, auth=(self.username, self.password))
         try:
             response_json = r.json()
         except ValueError:
             raise Exception('Failed to parse response JSON')
-        return WatsonAnswer(response_json)
+        return WatsonAnswer(response_json[0])
