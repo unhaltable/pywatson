@@ -1,6 +1,8 @@
 PyWatson |Travis CI| |Code Health| |Documentation Status|
 =========================================================
 
+**WARNING: This project is out-of-date and unmaintained, and may be incorrect. Proceed with caution.**
+
 A Python adapter for IBM Watson's question and answer API
 
 Installation
