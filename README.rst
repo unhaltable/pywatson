@@ -22,7 +22,7 @@ Usage
     from pywatson.watson import Watson
 
     # Create a Watson instance with your URL and credentials
-    # pywatson will use the endpoint `url + '/question'`
+    # pywatson will use the endpoint `url + '/question/{dataset}'`
     watson = Watson(url='https://watson-wdc01.ihost.com/instance/507/deepqa/v1', username='someuser', password='zyXHLz3sCoPt6G')
 
 See also
